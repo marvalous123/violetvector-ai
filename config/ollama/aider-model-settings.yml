@@ -1,0 +1,20 @@
+- name: ollama_chat/war-room-thorough:latest
+  edit_format: diff
+  weak_model_name: ollama_chat/war-room-fast:latest
+  use_repo_map: true
+  reminder: sys
+  lazy: false
+
+- name: ollama_chat/war-room-fast:latest
+  edit_format: diff
+  weak_model_name: ollama_chat/war-room-fast:latest
+  use_repo_map: true
+  reminder: sys
+  lazy: false
+
+- name: openai/nvidia/nemotron-3-super-120b-a12b
+  edit_format: diff
+  weak_model_name: openai/nvidia/nemotron-3-super-120b-a12b
+  use_repo_map: true
+  reminder: sys
+  lazy: false

@@ -1,0 +1,4 @@
+FROM gpt-oss:20b
+
+# Leave room for the larger model while retaining useful repository context.
+PARAMETER num_ctx 65536

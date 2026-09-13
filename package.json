@@ -1,0 +1,91 @@
+{
+  "name": "war-room-parrot-ai",
+  "version": "0.1.0",
+  "description": "Local-first, human-controlled security assessment control plane for authorized labs.",
+  "private": true,
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marvalous123/violetvector-ai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marvalous123/violetvector-ai/issues"
+  },
+  "homepage": "https://github.com/marvalous123/violetvector-ai#readme",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @war-room/policy && npm run build -w @war-room/executor-contract && npm run build -w @war-room/model-provider && npm run build -w @war-room/api && npm run build -w @war-room/sensor && npm run build -w @war-room/web && npm run build:windows-sensor",
+    "build:windows-sensor": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/invoke-windows-sensor-dotnet.ps1 -Command build",
+    "check:repository-safety": "node scripts/repository-safety-check.mjs --self-test && node scripts/repository-safety-check.mjs",
+    "plan:audit-witness-sqlite-reader-source-receipt": "node scripts/build-audit-witness-sqlite-reader-source-receipt.mjs plan",
+    "build:audit-witness-sqlite-reader-source-receipt": "node scripts/build-audit-witness-sqlite-reader-source-receipt.mjs build",
+    "check:audit-witness-sqlite-reader-source-receipt": "node scripts/check-audit-witness-sqlite-reader-source-receipt.mjs",
+    "test:audit-witness-sqlite-reader-source-receipt": "node --test scripts/audit-witness-sqlite-reader-source-receipt.test.mjs",
+    "plan:audit-witness-database-read-ceremony": "tsx apps/api/scripts/audit-witness-database-read-ceremony.ts plan",
+    "read:audit-witness-database-read-ceremony": "tsx apps/api/scripts/audit-witness-database-read-ceremony.ts read-once",
+    "check:audit-witness-database-read-ceremony-receipt": "node scripts/check-audit-witness-database-read-ceremony-receipt.mjs",
+    "test:audit-witness-database-read-ceremony": "tsx --test apps/api/scripts/audit-witness-database-read-ceremony.test.ts && node --test scripts/audit-witness-database-read-ceremony-receipt.test.mjs",
+    "check:windows-security-4663-live-exercise-receipt": "node scripts/check-windows-security-4663-live-exercise-receipt.mjs",
+    "test:windows-security-4663-live-exercise-receipt": "node --test scripts/check-windows-security-4663-live-exercise-receipt.test.mjs",
+    "check:windows-security-4663-genuine-match-receipt": "node scripts/check-windows-security-4663-genuine-match-receipt.mjs",
+    "test:windows-security-4663-genuine-match-receipt": "node --test scripts/check-windows-security-4663-genuine-match-receipt.test.mjs",
+    "audit:windows-sensor-packages": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/invoke-windows-sensor-dotnet.ps1 -Command audit",
+    "plan:windows-sensor-identity": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/provision-windows-sensor-identity.ps1 -Command plan",
+    "status:windows-sensor-identity": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/provision-windows-sensor-identity.ps1 -Command status",
+    "plan:windows-sensor-probe-cleanup": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/provision-windows-sensor-identity.ps1 -Command probe-cleanup -WhatIf",
+    "status:windows-sensor-probe": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/provision-windows-sensor-identity.ps1 -Command probe-status",
+    "plan:windows-sensor-source-readiness": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/invoke-windows-sensor-dotnet.ps1 -Command readiness-plan",
+    "check:windows-sensor-source-readiness": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/invoke-windows-sensor-dotnet.ps1 -Command readiness-check",
+    "plan:windows-sensor-service": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-windows-sensor-service.ps1 -Command plan",
+    "status:windows-sensor-service": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-windows-sensor-service.ps1 -Command status",
+    "check:windows-sensor-runtime": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-windows-sensor-service.ps1 -Command runtime-check",
+    "check:windows-sensor-service-package": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-windows-sensor-service.ps1 -Command package-check",
+    "plan:windows-sensor-install-bundle": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-windows-sensor-install-bundle.ps1 -Command plan",
+    "build:windows-sensor-install-bundle": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-windows-sensor-install-bundle.ps1 -Command build",
+    "plan:windows-sensor-localservice-readiness": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-windows-sensor-service.ps1 -Command source-readiness-check -WhatIf",
+    "plan:windows-sensor-local-batch": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-windows-sensor-service.ps1 -Command local-batch-check -WhatIf",
+    "check:windows-sensor-local-batch": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-windows-sensor-service.ps1 -Command local-batch-check",
+    "plan:windows-sensor-genuine-batch": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-windows-sensor-service.ps1 -Command genuine-batch-check -WhatIf",
+    "check:windows-sensor-genuine-batch": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-windows-sensor-service.ps1 -Command genuine-batch-check",
+    "plan:windows-sensor-bounded-collector": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-windows-sensor-service.ps1 -Command bounded-collector-check -WhatIf",
+    "check:windows-sensor-bounded-collector": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-windows-sensor-service.ps1 -Command bounded-collector-check",
+    "plan:windows-sensor-restart-check": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-windows-sensor-service.ps1 -Command restart-check -WhatIf",
+    "plan:windows-sensor-uninstall": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-windows-sensor-service.ps1 -Command uninstall -WhatIf",
+    "plan:windows-sensor-orphaned-install-cleanup": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-windows-sensor-service.ps1 -Command orphaned-install-cleanup -WhatIf",
+    "plan:windows-sensor-endpoint-binding": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/manage-windows-sensor-endpoint-binding.ps1 -Command plan",
+    "check:windows-sensor-pending-binding": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/manage-windows-sensor-endpoint-binding.ps1 -Command check-pending",
+    "check:windows-sensor-final-binding": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/manage-windows-sensor-endpoint-binding.ps1 -Command check-final",
+    "plan:windows-sensor-loopback-delivery": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/manage-windows-sensor-endpoint-binding.ps1 -Command deliver-once -WhatIf",
+    "check:windows-sensor-loopback-delivery": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/manage-windows-sensor-endpoint-binding.ps1 -Command check-delivery",
+    "dev:api": "npm run dev -w @war-room/api",
+    "dev:web": "npm run dev -w @war-room/web",
+    "lint": "eslint .",
+    "test": "npm run test -w @war-room/policy && npm run test -w @war-room/executor-contract && npm run test -w @war-room/model-provider && npm run test -w @war-room/api && npm run test -w @war-room/sensor && npm run test -w @war-room/web && npm run test:windows-sensor",
+    "test:security-mutations": "node scripts/security-mutation-check.mjs",
+    "test:windows-sensor": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/invoke-windows-sensor-dotnet.ps1 -Command test",
+    "typecheck": "npm run typecheck -w @war-room/policy && npm run typecheck -w @war-room/executor-contract && npm run typecheck -w @war-room/model-provider && npm run typecheck -w @war-room/api && npm run typecheck -w @war-room/sensor && npm run typecheck -w @war-room/web",
+    "smoke:local-ai": "npm run smoke:local-ai -w @war-room/api",
+    "qa:report-exports": "tsx apps/api/scripts/qa-report-exports.ts",
+    "backup": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/backup-local.ps1",
+    "verify": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify.ps1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.0.15",
+    "eslint": "^10.8.0",
+    "globals": "^16.3.0",
+    "typescript": "^5.8.3",
+    "tsx": "^4.20.3",
+    "typescript-eslint": "^8.65.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

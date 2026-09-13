@@ -1,0 +1,65 @@
+name: Bug report
+description: Report a reproducible VioletVector AI defect using sanitized data.
+title: "[Bug]: "
+labels: [bug, triage]
+body:
+  - type: markdown
+    attributes:
+      value: Do not post credentials, target addresses, private evidence, raw logs or client data. Report security defects privately through SECURITY.md.
+
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: 0.1.0 or a commit SHA
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Installation or startup
+        - Guided demo
+        - Missions and scope
+        - Approvals and execution controls
+        - Evidence, findings or reports
+        - Blue Team workflow
+        - Windows sensor build
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Use the guided demo or synthetic data wherever possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed secrets, target addresses, private paths, evidence, raw logs and client data.
+          required: true
+        - label: This is not a vulnerability report or a request to bypass a safety control.
+          required: true

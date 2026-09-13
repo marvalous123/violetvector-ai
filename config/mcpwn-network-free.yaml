@@ -1,0 +1,11 @@
+tools:
+  - name: nmap_version
+    description: Report the installed Nmap version without accepting a target or any arguments.
+    command: nmap
+    fixed_args:
+      - --version
+    args: []
+    success_exit_codes:
+      - 0
+    timeout: 15s
+    max_output_bytes: 65536

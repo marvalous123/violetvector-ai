@@ -1,0 +1,14 @@
+{
+  "name": "@war-room/sensor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json --outDir \"%USERPROFILE%/.codex-build/project15/sensor\"",
+    "test": "tsx --test src/**/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.3"
+  }
+}

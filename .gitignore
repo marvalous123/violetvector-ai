@@ -1,0 +1,48 @@
+# Dependencies and generated output
+node_modules/
+package-lock.json.tmp
+dist/
+build/
+bin/
+obj/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+
+# Runtime data and databases
+data/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+logs/
+*.log
+*.tmp
+
+# Security-tool output and sensitive evidence
+tools/*
+!tools/.gitkeep
+evidence/*
+!evidence/README.md
+reports/generated/
+*.har
+*.pcap
+*.pcapng
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.aider.tags.cache.v4/

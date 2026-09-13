@@ -1,0 +1,36 @@
+{
+  "vectorVersion": 1,
+  "core": {
+    "schemaVersion": 1,
+    "missionId": "mission+wire-vector-café-1",
+    "connectorId": "connector-11111111-1111-4111-8111-111111111111",
+    "endpointId": "endpoint-22222222-2222-4222-8222-222222222222",
+    "certificateFingerprintSha256": "e2dcfc03dc70317bfbb5150630a7455df537689425dcdbc8cb4cd9c6a558b788",
+    "capabilitySnapshotId": "capability-33333333-3333-4333-8333-333333333333",
+    "bootId": "boot-wire-vector-00000001",
+    "batchSequence": -0,
+    "previousBatchHash": null,
+    "provider": "windows-eventlog",
+    "channel": "eventlog-admin",
+    "eventFamily": "event-log-clear",
+    "filterHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "facts": [
+      {
+        "factId": "fact-wire-vector-00000001",
+        "occurredAt": "2026-07-19T13:00:00.000+01:00",
+        "sourceRecordIdHash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "fields": {
+          "actorTrust": "untrusted",
+          "action": "clear",
+          "subjectClass": "admin-tool",
+          "objectClass": "event-log",
+          "outcome": "success"
+        }
+      }
+    ]
+  },
+  "canonicalPayload": "{\"batchSequence\":0,\"bootId\":\"boot-wire-vector-00000001\",\"capabilitySnapshotId\":\"capability-33333333-3333-4333-8333-333333333333\",\"certificateFingerprintSha256\":\"e2dcfc03dc70317bfbb5150630a7455df537689425dcdbc8cb4cd9c6a558b788\",\"channel\":\"eventlog-admin\",\"connectorId\":\"connector-11111111-1111-4111-8111-111111111111\",\"endpointId\":\"endpoint-22222222-2222-4222-8222-222222222222\",\"eventFamily\":\"event-log-clear\",\"facts\":[{\"factId\":\"fact-wire-vector-00000001\",\"fields\":{\"action\":\"clear\",\"actorTrust\":\"untrusted\",\"objectClass\":\"event-log\",\"outcome\":\"success\",\"subjectClass\":\"admin-tool\"},\"occurredAt\":\"2026-07-19T13:00:00.000+01:00\",\"sourceRecordIdHash\":\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\"}],\"filterHash\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"missionId\":\"mission+wire-vector-café-1\",\"previousBatchHash\":null,\"provider\":\"windows-eventlog\",\"schemaVersion\":1}",
+  "batchHash": "7722f14bb9ee360114e3eea28848fbed3ef96643c3e9bfdf759ef73e0c48a884",
+  "publicKeySpkiBase64": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAENt1FzRIta3tVwx4NJtGbQcRhWQG88SnAWqE1c+2yV3nuVgHf3eoNIvGRjYvKQ7lPy5h2WY68Ii97sXTgYRfalw==",
+  "signatureBase64": "vJbslI2oWh24vG4y31v4OtgSiYmWPE4oAZhg1s5RJfNLVPayJO15k/pMVmuk+AnNNs0a4+B1rUOsoF6gt6PV0w=="
+}

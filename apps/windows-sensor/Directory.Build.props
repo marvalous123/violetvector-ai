@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup>
+    <WarRoomBuildRoot Condition="'$(WarRoomBuildRoot)' == ''">$(USERPROFILE)\.codex-build\project15\windows-sensor</WarRoomBuildRoot>
+    <BaseOutputPath>$(WarRoomBuildRoot)\bin\$(MSBuildProjectName)\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(WarRoomBuildRoot)\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>$(BaseIntermediateOutputPath)</MSBuildProjectExtensionsPath>
+  </PropertyGroup>
+</Project>

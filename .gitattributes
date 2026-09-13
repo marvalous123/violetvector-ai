@@ -1,0 +1,32 @@
+* text=auto
+*.ps1 text eol=crlf
+*.sh text eol=lf
+
+# Internal continuation, machine-proof and local-agent records are intentionally
+# absent from source archives used to create the squashed public preview.
+/AGENTS.md export-ignore
+/PROJECT_CONTEXT.md export-ignore
+/PROJECT_15_HANDOFF.md export-ignore
+/docs/AIDER_HANDOFF.md export-ignore
+/docs/CODE_AUDIT.md export-ignore
+/docs/FRESH_CODEX_TASK.md export-ignore
+/docs/HERMES_HANDOFF.md export-ignore
+/docs/HERMES_KANBAN.md export-ignore
+/docs/LOCAL_CODING_AGENT.md export-ignore
+/docs/LOCAL_OPERATIONS.md export-ignore
+/docs/VERIFICATION.md export-ignore
+/docs/WINDOWS_*.md export-ignore
+/config/hermes/ export-ignore
+/config/ollama/AIDER_AGENT.md export-ignore
+/scripts/invoke-project15-ai-review.ps1 export-ignore
+/scripts/run-hermes-project15-kanban.sh export-ignore
+/scripts/run-hermes-overnight-sandbox.sh export-ignore
+/scripts/set-nvidia-api-key.ps1 export-ignore
+/scripts/setup-hermes-project15-kanban.ps1 export-ignore
+/scripts/start-hermes-overnight-sandbox.ps1 export-ignore
+/scripts/start-hermes-project15-kanban.ps1 export-ignore
+/scripts/start-hermes-project15.ps1 export-ignore
+/scripts/start-local-coding-agent.ps1 export-ignore
+/scripts/status-hermes-project15-kanban.ps1 export-ignore
+/scripts/test-project15-ai-stack.ps1 export-ignore
+/scripts/verify-hermes-overnight-sandbox.sh export-ignore

@@ -1,0 +1,25 @@
+{
+  "name": "@war-room/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json --outDir \"%USERPROFILE%/.codex-build/project15/api\" && node scripts/copy-migrations.mjs \"%USERPROFILE%/.codex-build/project15/api\"",
+    "dev": "tsx watch src/cli.ts",
+    "start": "tsx src/cli.ts",
+    "smoke:local-ai": "tsx scripts/smoke-local-ai.ts",
+    "test": "tsx --test src/**/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.scripts.json"
+  },
+  "dependencies": {
+    "@war-room/executor-contract": "0.1.0",
+    "@war-room/model-provider": "0.1.0",
+    "@war-room/policy": "0.1.0",
+    "docx": "^9.5.1",
+    "pdf-lib": "^1.17.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.3"
+  }
+}

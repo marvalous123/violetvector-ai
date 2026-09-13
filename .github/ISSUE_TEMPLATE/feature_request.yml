@@ -1,0 +1,35 @@
+name: Feature request
+description: Suggest a bounded improvement to VioletVector AI.
+title: "[Feature]: "
+labels: [enhancement, triage]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Describe the operator or reviewer need, not an unrestricted tool request.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed improvement
+    validations:
+      required: true
+
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety and evidence impact
+      description: Explain how exact scope, approval, bounds, audit and evidence claims remain intact.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundary acknowledgement
+      options:
+        - label: This request does not add autonomous execution, raw commands, credential access, payloads, evasion or unauthorized targets.
+          required: true

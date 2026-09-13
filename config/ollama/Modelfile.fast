@@ -1,0 +1,4 @@
+FROM qwen3.5:4b
+
+# Keep the fast profile responsive on the 32 GB / RTX 4050 laptop.
+PARAMETER num_ctx 32768

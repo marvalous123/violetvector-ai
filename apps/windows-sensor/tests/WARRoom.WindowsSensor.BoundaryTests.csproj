@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\WARRoom.WindowsSensor.csproj" />
+    <ProjectReference Include="..\readiness\WARRoom.WindowsSensor.Readiness.csproj" />
+    <ProjectReference Include="..\audit-witness-installer\WARRoom.WindowsSensor.AuditWitnessInstaller.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\test-vectors\windows-sensor\minimized-fact-batch-v1.json">
+      <Link>minimized-fact-batch-v1.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
