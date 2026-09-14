@@ -50,8 +50,9 @@ function sha256(value: string | Buffer): string {
 
 function makeHome(): string {
   const home = mkdtempSync(join(tmpdir(), "project15-read-ceremony-"));
-  temporaryHomes.push(home);
-  return resolve(home);
+  const canonicalHome = realpathSync.native(home);
+  temporaryHomes.push(canonicalHome);
+  return canonicalHome;
 }
 
 function databasePath(home: string): string {
