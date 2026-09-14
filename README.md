@@ -83,7 +83,7 @@ The Blue Team design is documented in [docs/BLUE_TEAM_DETECTION.md](docs/BLUE_TE
 ### Supported preview environment
 
 - Windows 11 with PowerShell 7
-- Node.js 22 or newer and npm
+- Node.js 24.12 or newer and npm
 - .NET 8 SDK for the Windows sensor build and boundary tests
 - Optional: Ollama for local advisory planning
 - Optional and maintainer-only: Kali WSL2 plus Docker for the sealed Redmi lane

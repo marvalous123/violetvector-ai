@@ -17,7 +17,7 @@ security boundary.
 ## Development workflow
 
 1. Create a focused branch from `main`.
-2. Install the exact dependency graph with `npm ci` on Windows 11 and Node 22+.
+2. Install the exact dependency graph with `npm ci` on Windows 11 and Node 24.12+.
 3. Add or update deterministic tests for policy and workflow changes.
 4. Run `npm run verify` before opening a pull request.
 5. Explain the safety impact, tests and recovery path in the pull request.

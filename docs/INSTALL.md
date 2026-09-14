@@ -8,7 +8,7 @@ the maintainer-only Redmi execution lane.
 
 - Git
 - PowerShell 7
-- Node.js 22 or newer with npm
+- Node.js 24.12 or newer with npm
 - .NET 8 SDK
 - A current Windows account that can create files under its own profile
 

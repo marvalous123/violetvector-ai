@@ -10,11 +10,11 @@ $resolvedDataRoot = [IO.Path]::GetFullPath($DataRoot)
 $evidenceRoot = Join-Path $resolvedDataRoot 'evidence'
 
 if (-not (Get-Command node.exe -ErrorAction SilentlyContinue)) {
-    throw 'Node.js 22 or newer is required.'
+    throw 'Node.js 24.12 or newer is required.'
 }
-$nodeMajor = [int]((& node.exe -p 'parseInt(process.versions.node,10)').Trim())
-if ($nodeMajor -lt 22) {
-    throw "Node.js 22 or newer is required; found major version $nodeMajor."
+$nodeVersion = [version]((& node.exe -p 'process.versions.node').Trim())
+if ($nodeVersion -lt [version]'24.12.0') {
+    throw "Node.js 24.12 or newer is required; found version $nodeVersion."
 }
 if (-not (Get-Command npm.cmd -ErrorAction SilentlyContinue)) {
     throw 'npm is required.'
