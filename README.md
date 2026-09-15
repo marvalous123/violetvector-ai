@@ -2,6 +2,8 @@
 
 VioletVector AI is a local-first, human-controlled security assessment control plane for authorized labs. It combines an original operator interface and policy gateway with Parrot Security's MCPwn tool bridge, local AI providers, Kali WSL2, and isolated practice targets.
 
+![VioletVector AI public preview](docs/media/violetvector-social-preview.png)
+
 ## Naming
 
 **VioletVector AI** is the public product name. Existing `WAR-R00M` service,
@@ -26,6 +28,18 @@ client data or exploit material in public issues.
 - Propose improvements through the feature-request template.
 - Report suspected vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
 - Read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a pull request.
+
+## See It in Action
+
+The zero-target guided demo exercises the visible workflow using synthetic data only. It makes no network contact, accepts no target and grants no execution authority.
+
+[Watch the 35-second public-preview demo](https://github.com/marvalous123/violetvector-ai/releases/download/v0.1.0/violetvector-v0.1.0-demo.mp4)
+
+| Mission cockpit | Evidence-backed finding | Deterministic report |
+| --- | --- | --- |
+| ![Guided mission cockpit](docs/media/03-mission-cockpit.png) | ![Evidence-backed finding](docs/media/05-evidence-backed-findings.png) | ![Deterministic report](docs/media/06-reports.png) |
+
+Windows testers are welcome. Install the preview, run the guided demo, and report the first confusing or broken thing through [GitHub Issues](https://github.com/marvalous123/violetvector-ai/issues) or [GitHub Discussions](https://github.com/marvalous123/violetvector-ai/discussions).
 
 ## Intended Architecture
 
