@@ -229,9 +229,9 @@ async function renderPdf(
 ): Promise<Uint8Array> {
   const document = await PDFDocument.create();
   document.setTitle(`${snapshot.mission.name} - Security Assessment Report`);
-  document.setAuthor("WAR-R00M");
+  document.setAuthor("VioletVector AI");
   document.setSubject("Evidence-backed authorized security assessment");
-  document.setCreator("WAR-R00M report-export-v1");
+  document.setCreator("VioletVector AI report-export-v1");
   const fixedDate = new Date(snapshot.frozenAt);
   document.setCreationDate(fixedDate);
   document.setModificationDate(fixedDate);
@@ -248,7 +248,7 @@ async function renderPdf(
   const newPage = () => {
     page = document.addPage([pageWidth, pageHeight]);
     pageNumber += 1;
-    page.drawText("WAR-R00M | EVIDENCE-BACKED ASSESSMENT", {
+    page.drawText("VIOLETVECTOR AI | EVIDENCE-BACKED ASSESSMENT", {
       x: margin,
       y: pageHeight - 42,
       size: 8,
@@ -465,7 +465,7 @@ async function renderDocx(
     )
   );
   const document = new Document({
-    creator: "WAR-R00M",
+    creator: "VioletVector AI",
     title: `${snapshot.mission.name} - Security Assessment Report`,
     description: "Evidence-backed authorized security assessment",
     styles: {
@@ -532,7 +532,7 @@ async function renderDocx(
         default: new Header({
           children: [
             new Paragraph({
-              children: [new TextRun({ text: "WAR-R00M | EVIDENCE-BACKED ASSESSMENT", size: 16, bold: true, color: "576D66" })]
+              children: [new TextRun({ text: "VIOLETVECTOR AI | EVIDENCE-BACKED ASSESSMENT", size: 16, bold: true, color: "576D66" })]
             })
           ]
         })

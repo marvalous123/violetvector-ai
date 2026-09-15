@@ -16,7 +16,7 @@ mkdirSync(join(dataRoot, "evidence"), { recursive: true });
 const configuredBootstrapSecret = process.env.WAR_ROOM_OPERATOR_BOOTSTRAP;
 const bootstrapSecret = configuredBootstrapSecret ?? OperatorSessionService.generateBootstrapSecret();
 if (!configuredBootstrapSecret) {
-  console.log(`WAR-R00M per-launch bootstrap secret: ${bootstrapSecret}`);
+  console.log(`VioletVector AI per-launch bootstrap secret: ${bootstrapSecret}`);
 }
 
 const executor =

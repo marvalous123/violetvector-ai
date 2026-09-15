@@ -1647,7 +1647,7 @@ function App() {
     return (
       <main className="operator-lock">
         <form className="panel unlock-panel" onSubmit={unlock} autoComplete="off">
-          <div className="panel-title"><div><p>LOCAL OPERATOR SESSION</p><h1>Unlock WAR-R00M</h1></div><span>{session === null ? "CHECKING" : "LOCKED"}</span></div>
+          <div className="panel-title"><div><p>LOCAL OPERATOR SESSION</p><h1>Unlock VioletVector AI</h1></div><span>{session === null ? "CHECKING" : "LOCKED"}</span></div>
           <div className="unlock-body">
           <div className="warning">Use the per-launch bootstrap secret shown in the local startup terminal. It is never stored in the browser or audit log.</div>
             <label>Operator name<input value={operatorName} onChange={(event) => setOperatorName(event.target.value)} minLength={2} maxLength={120} autoComplete="off" required /></label>
@@ -1663,7 +1663,7 @@ function App() {
   return (
     <div className="shell">
       <aside>
-        <div className="brand"><span>WR</span> WAR-R00M</div>
+        <div className="brand"><span>VV</span> VioletVector AI</div>
         <nav>
           {['Missions', 'Capabilities', 'Blue Team', 'Workflow', 'Plan & Compare', 'Local AI', 'Approvals', 'Findings', 'Evidence', 'Reports', 'System'].map((item) => (
             <button className={view === item ? 'active' : ''} key={item} onClick={() => setView(item)}>{item}</button>
@@ -1926,7 +1926,7 @@ function App() {
                   <span>ENDPOINTS<strong>{blueWorkspace?.liveEndpoints.length ?? 0}</strong></span>
                 </div>
                 <p className="blue-copy">
-                  The server accepts signed primitive facts and exact health measurements only. Detection labels are calculated here in WAR-R00M; commands never travel back to the endpoint.
+                  The server accepts signed primitive facts and exact health measurements only. Detection labels are calculated here in VioletVector AI; commands never travel back to the endpoint.
                 </p>
                 <div className="control-note">{blueWorkspace?.endpointAccess.note ?? "Loading endpoint boundary…"}</div>
                 <label>Enrolled endpoint
@@ -3307,7 +3307,7 @@ function App() {
                     <span>BINDING<strong>{supportDiagnostics.runtime.loopbackOnly ? "LOOPBACK" : "REVIEW"}</strong></span>
                   </div>
                   <div className="control-note">
-                    WAR-R00M {supportDiagnostics.product.version} · {supportDiagnostics.product.edition} · Node {supportDiagnostics.runtime.node} ·
+                    {supportDiagnostics.product.name} {supportDiagnostics.product.version} · {supportDiagnostics.product.edition} · Node {supportDiagnostics.runtime.node} ·
                     checked {supportDiagnostics.generatedAt}. This view deliberately omits targets, evidence content, secrets and local paths.
                   </div>
                   <div className="record-list">

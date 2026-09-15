@@ -703,7 +703,7 @@ function buildResult(scenarioId: BlueScenarioId, now: Date): BlueDetectionResult
           : "none",
       verdict: alerts.length ? "suspicious-behaviour-detected" : "no-rule-match",
       limitation:
-        "Synthetic signal matches validate the WAR-R00M pipeline, not live raw-event collection or proof that an endpoint was compromised."
+        "Synthetic signal matches validate the VioletVector AI pipeline, not live raw-event collection or proof that an endpoint was compromised."
     }
   };
 }

@@ -1803,9 +1803,9 @@ export function startServer(options: ServerOptions = {}) {
   const configuredSecret = options.bootstrapSecret ?? process.env.WAR_ROOM_OPERATOR_BOOTSTRAP;
   const bootstrapSecret = configuredSecret ?? OperatorSessionService.generateBootstrapSecret();
   if (!configuredSecret) {
-    console.warn(`WAR-R00M per-launch operator bootstrap secret: ${bootstrapSecret}`);
+    console.warn(`VioletVector AI per-launch operator bootstrap secret: ${bootstrapSecret}`);
   }
   return buildServer({ ...options, bootstrapSecret }).listen(port, host, () => {
-    console.log(`WAR-R00M listening on http://${host}:${port}`);
+    console.log(`VioletVector AI listening on http://${host}:${port}`);
   });
 }

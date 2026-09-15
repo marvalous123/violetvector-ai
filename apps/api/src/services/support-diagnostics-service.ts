@@ -20,7 +20,7 @@ const MAX_EVIDENCE_BYTES = 32 * 1024 * 1024;
 export interface SupportDiagnostics {
   readonly generatedAt: string;
   readonly product: {
-    readonly name: "WAR-R00M";
+    readonly name: "VioletVector AI";
     readonly version: "0.1.0";
     readonly edition: "starter" | "professional";
   };
@@ -84,7 +84,7 @@ export class SupportDiagnosticsService {
     return {
       generatedAt: now.toISOString(),
       product: {
-        name: "WAR-R00M",
+        name: "VioletVector AI",
         version: "0.1.0",
         edition: this.productEdition
       },

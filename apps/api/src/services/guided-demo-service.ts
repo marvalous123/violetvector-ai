@@ -33,7 +33,7 @@ export class GuidedDemoService {
     const normalizedOperator = operator.trim();
     if (normalizedOperator.length < 2 || normalizedOperator.length > 120) throw new Error("OPERATOR_INVALID");
     const mission = this.missions.createMission(
-      `WAR-R00M Guided Demo ${now.toISOString().slice(0, 16).replace("T", " ")}`,
+      `VioletVector AI Guided Demo ${now.toISOString().slice(0, 16).replace("T", " ")}`,
       now
     );
     const scopeVersionId = randomUUID();
