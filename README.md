@@ -31,6 +31,12 @@ client data or exploit material in public issues.
 
 ## See It in Action
 
+**Try the guided demo:** on Windows 11, install Node.js 24.12+ with npm,
+download and extract the source, then double-click **Start VioletVector Demo.cmd**.
+Enter your name and the one-time secret shown in the terminal; on Missions,
+click **Create guided demo**. No .NET, Ollama, WSL, Docker or real target is needed.
+First setup downloads dependencies. See [the three-step quick start](docs/INSTALL.md).
+
 The zero-target guided demo exercises the visible workflow using synthetic data only. It makes no network contact, accepts no target and grants no execution authority.
 
 [Watch the 35-second public-preview demo](https://github.com/marvalous123/violetvector-ai/releases/download/v0.1.0/violetvector-v0.1.0-demo.mp4)

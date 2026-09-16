@@ -1,6 +1,6 @@
 {
   "name": "war-room-parrot-ai",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Local-first, human-controlled security assessment control plane for authorized labs.",
   "private": true,
   "license": "Apache-2.0",
@@ -63,6 +63,9 @@
     "check:windows-sensor-loopback-delivery": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/manage-windows-sensor-endpoint-binding.ps1 -Command check-delivery",
     "dev:api": "npm run dev -w @war-room/api",
     "dev:web": "npm run dev -w @war-room/web",
+    "demo": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-demo.ps1",
+    "test:demo-launcher": "node --test scripts/demo-launcher.test.mjs",
+    "smoke:demo": "node scripts/smoke-demo.mjs",
     "lint": "eslint .",
     "test": "npm run test -w @war-room/policy && npm run test -w @war-room/executor-contract && npm run test -w @war-room/model-provider && npm run test -w @war-room/api && npm run test -w @war-room/sensor && npm run test -w @war-room/web && npm run test:windows-sensor",
     "test:security-mutations": "node scripts/security-mutation-check.mjs",

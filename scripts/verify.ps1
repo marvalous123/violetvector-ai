@@ -76,6 +76,9 @@ try {
     }
     $powerShellScriptCount = Test-TrackedPowerShellSyntax
 
+    & npm.cmd run test:demo-launcher
+    if ($LASTEXITCODE -ne 0) { throw 'Demo launcher verification failed.' }
+
     foreach ($command in @('test', 'typecheck', 'lint', 'build')) {
         & npm.cmd run $command
         if ($LASTEXITCODE -ne 0) {
